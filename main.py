@@ -1,8 +1,11 @@
 from Tnc import *
 import asyncio
-from pyrogram import Client
+import logging
+from pyrogram import Client, idle
 from config import API_ID, API_HASH, BOT_TOKEN
 from Tnc import LOG
+
+logging.basicConfig(level=logging.INFO)
 
 app = Client(
     "TncForceJoinBot",
@@ -11,9 +14,19 @@ app = Client(
     bot_token=BOT_TOKEN,
 )
 
-# load plugins
+# Import all plugin handlers
 from plugins import start, core, invite, ownercmds  # noqa: F401
 
+async def main():
+    LOG.info("🚀 Tnc Force Join Bot v6 is starting...")
+    await app.start()
+    LOG.info("✅ Bot is online and running successfully.")
+    await idle()  # Keeps the bot alive
+    LOG.info("🛑 Bot stopped manually.")
+    await app.stop()
+
 if __name__ == "__main__":
-    LOG.info("🚀 Tnc Force Join Bot v5 is starting...")
-    app.run()
+    try:
+        asyncio.run(main())
+    except (KeyboardInterrupt, SystemExit):
+        LOG.info("❌ Bot stopped due to system exit or interrupt.")
