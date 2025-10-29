@@ -1,0 +1,55 @@
+{
+  "name": "TNC MUST JOIN BOT",
+  "description": "A Telegram Must-Join & Add-Sub enforcement bot with admin control and broadcast support. Made by ㅤ- 𝖳ɴᴄ //Ｉᴠ ⋏ ᥒ",
+  "repository": "https://github.com/Tnc-Official/TncForceJoinBot",
+  "logo": "https://telegra.ph/file/d2b8c8a8e2e0a556f873e.jpg",
+  "keywords": [
+    "telegram",
+    "pyrogram",
+    "forcejoin",
+    "addsub",
+    "heroku",
+    "bot",
+    "tnc"
+  ],
+  "env": {
+    "API_ID": {
+      "description": "Your Telegram API ID from https://my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Your Telegram API HASH from https://my.telegram.org",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Your bot token from @BotFather",
+      "required": true
+    },
+    "MONGO_URL": {
+      "description": "Your MongoDB URI (Database connection string)",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Bot owner Telegram user ID",
+      "value": "8487284125",
+      "required": true
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "stack": "heroku-22"
+}
