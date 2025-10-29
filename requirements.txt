@@ -1,5 +1,5 @@
-pyrogram
-tgcrypto
+pyrogram==2.0.106
+TgCrypto
 motor
-dnspython
-pillow
+aiofiles
+asyncio
