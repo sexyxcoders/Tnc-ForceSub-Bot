@@ -51,5 +51,5 @@
       "size": "Standard-1X"
     }
   },
-  "stack": "heroku-22"
+  "stack": "heroku-24"
 }
