@@ -1,2 +1,2 @@
-# Tnc Force Join Bot v5
-Final build
+# Tnc Force Join Bot 
+soon
